@@ -1,4 +1,5 @@
 // Write your code here
+import MoviesSlider from '../MoviesSlider'
 import './index.css'
 
 const PrimeVideo = props => {
@@ -9,7 +10,6 @@ const PrimeVideo = props => {
   const comedyMovies = moviesList.filter(
     eachMovie => eachMovie.categoryId === 'COMEDY',
   )
-  console.log(actionMovies, comedyMovies)
 
   return (
     <div className="prime-video-bg">
@@ -20,6 +20,11 @@ const PrimeVideo = props => {
       />
       <div className="movies-con">
         <h1 className="movie-heading">Action Movies</h1>
+        <MoviesSlider movieDetails={actionMovies} />
+      </div>
+      <div className="movies-con">
+        <h1 className="movie-heading">Comedy Movies</h1>
+        <MoviesSlider movieDetails={comedyMovies} />
       </div>
     </div>
   )
